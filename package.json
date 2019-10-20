@@ -1,0 +1,65 @@
+{
+  "name": "react-spy",
+  "version": "0.12.0",
+  "description": "A set of utilities for collecting UX-analytics of your React-application (ex: clicks, shows, errors and etc.)",
+  "author": "RubaXa <ibnRubaXa@gmail.com",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": "git@github.com:rubaxa/react-spy.git",
+  "scripts": {
+    "test": "jest --coverage",
+    "ts-build": "tsc",
+    "git-clean": "git clean -f",
+    "prepublish": "npm run test && npm run ts-build",
+    "postpublish": "npm run git-clean",
+    "postversion": "git push --tags"
+  },
+  "files": [
+    "*.js",
+    "*.d.ts",
+    "src/*/*.js",
+    "src/*/*.d.ts"
+  ],
+  "devDependencies": {
+    "@types/enzyme": "^2.8.12",
+    "@types/jest": "^19.2.3",
+    "@types/prop-types": "^15.0.0",
+    "@types/react": "^15.0.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-15": "^1.0.1",
+    "jest": "^23.4.2",
+    "prop-types": "^15.6.0",
+    "raf": "^3.4.0",
+    "react": "^15.0.0",
+    "react-dom": "^15.0.0",
+    "react-test-renderer": "^15.0.0",
+    "ts-jest": "^20.0.4",
+    "typescript": "^2.9.2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "\\.tests\\.tsx?$",
+    "transformIgnorePatterns": [],
+    "testURL": "http://localhost/",
+    "setupFiles": [
+      "raf/polyfill"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/__jest__/extensions.ts",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ]
+  },
+  "peerDependencies": {
+    "@types/react": "^15.0.0",
+    "@types/react-dom": "^15.0.0",
+    "@types/prop-types": "^15.0.0",
+    "react": ">=15.0.0",
+    "prop-types": ">=15.6.0"
+  },
+  "dependencies": {}
+}
